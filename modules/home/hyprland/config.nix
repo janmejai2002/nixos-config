@@ -2,6 +2,11 @@
 {
   wayland.windowManager.hyprland = {
     settings = {
+      env = [
+          "LIBVA_DRIVER_NAME,nvidia"
+          "XDG_SESSION_TYPE,wayland"
+          "WLR_NO_HARDWARE_CURSORS,1"
+        ];
       
       # autostart
       exec-once = [
@@ -285,7 +290,8 @@
     };
 
     extraConfig = "
-      monitor=,preferred,auto,auto
+      monitor=HDMI-A-2, 1920x1080, 0x0, 1
+      monitor=eDP-1, 1920x1080, 1920x0, 1
 
       xwayland {
         force_zero_scaling = true
